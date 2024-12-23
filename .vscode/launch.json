@@ -25,6 +25,18 @@
       //   Uncaught TypeError TypeError [ERR_UNKNOWN_FILE_EXTENSION]: Unknown file extension ".ts"
       "outFiles": ["${workspaceFolder}/dist/**/*.{js,mjs,cjs}"],
       "preLaunchTask": "${defaultBuildTask}",
-    }
+    },
+    {
+      "name": "Test selected Jest",
+      "type": "node",
+      "request": "launch",
+      "runtimeArgs": [
+        "${workspaceRoot}/node_modules/jest/bin/jest.js",
+        "--runInBand",
+        "${relativeFile}"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
   ]
 }
